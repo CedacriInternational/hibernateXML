@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="mypersonajes.Battleargue" table="battleargue">
+      
+    <id name="battleargueId" type="java.lang.Integer">
+        <column name="battleargue_id" />
+        <generator class="increment" />
+    </id>
+    
+    <property name="argument" type="string">
+        <column name="argument" />
+    </property>
+    
+    <property name="raceId" type="java.lang.Integer">
+        <column name="race_id" />
+    </property>
+    
+    <property name="level" type="java.lang.Integer">
+        <column name="level" />
+    </property>
+    
+    <many-to-one name="race" class="mypersonajes.Races" insert="false" update="false" lazy="false">
+        <column name="race_id" not-null="true" />
+    </many-to-one>
+      
+  </class>
+</hibernate-mapping>

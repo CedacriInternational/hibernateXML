@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="mypersonajes.Personajes" table="personajes">
+      
+    <id name="personajId" type="java.lang.Integer">
+        <column name="personaj_id" />
+        <generator class="increment" />
+    </id>
+    
+    <property name="name" type="string">
+        <column name="name" />
+    </property>
+    
+    <property name="raceId" type="java.lang.Integer">
+        <column name="race_id" />
+    </property>
+    
+    <property name="weapon" type="string">
+        <column name="weapon" />
+    </property>
+    
+    <property name="health" type="java.lang.Integer">
+        <column name="health" />
+    </property>
+    
+    <property name="damage" type="java.lang.Integer">
+        <column name="damage" />
+    </property>
+    
+    <property name="shield" type="java.lang.Integer">
+        <column name="shield" />
+    </property>
+    
+    <many-to-one name="race" class="mypersonajes.Races" insert="false" update="false" lazy="false">
+        <column name="race_id" not-null="true" />
+    </many-to-one>
+    
+  </class>
+</hibernate-mapping>
