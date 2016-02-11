@@ -33,11 +33,11 @@ public class Main {
              System.out.println(personajes.get(i).getName() +
                     "..." + personajes.get(i).getRace().getRace());
         
-        //m.addPersonaj("Johny", 2, "axe", 100, 10, 2);
+        m.addPersonaj("Johny", 2, "axe", 100, 10, 2);
         
         m.printPersonajes(); 
         System.out.println(separator);
         
-        //m.deletePersonajes(33);
+        m.deletePersonajes(33);
     }
 }
